@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEditor;
 
 public class Storyteller : MonoBehaviour
 {
@@ -159,4 +160,27 @@ public class Storyteller : MonoBehaviour
             ShowDrawing(toNextArrow);
         }
     }
+
+    #region Editor
+#if UNITY_EDITOR
+
+    // Custom editor inspired by Kap Koder
+    // https://www.youtube.com/watch?v=RImM7XYdeAc
+
+    [CustomEditor(typeof(Storyteller))]
+    public class StorytellerEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            // Renders the base thing
+            base.OnInspectorGUI();
+
+            // Get the DummyOutlineHandler to check whether advanced should be used or not
+            Storyteller storyteller = (Storyteller)target;
+
+
+        }
+    }
+#endif
+    #endregion
 }
