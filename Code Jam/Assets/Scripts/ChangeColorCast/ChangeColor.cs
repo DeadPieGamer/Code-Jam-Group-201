@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ChangeColor : MonoBehaviour
 {
+    // Code inspired by "GameAssetWorld", YT link: https://www.youtube.com/watch?v=EzZGPRBchJo
 
     public Image imageColor;
     public Color color;
