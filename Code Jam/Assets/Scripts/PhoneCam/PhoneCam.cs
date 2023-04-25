@@ -59,7 +59,7 @@ public class PhoneCam : MonoBehaviour
         float scaleY = backcam.videoVerticallyMirrored ? -1f : 1f;
         background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
 
-        int orient = -backcam.videoRotationAngle;
-        background.rectTransform.localEulerAngles = new Vector3(0f, 0f, orient);
+        //int orient = -backcam.videoRotationAngle;
+        //background.rectTransform.localEulerAngles = new Vector3(0f, 0f, orient);
     }
 }
