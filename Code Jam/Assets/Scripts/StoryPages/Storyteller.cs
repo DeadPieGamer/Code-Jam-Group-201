@@ -178,8 +178,59 @@ public class Storyteller : MonoBehaviour
             // Get the DummyOutlineHandler to check whether advanced should be used or not
             Storyteller storyteller = (Storyteller)target;
 
-
+            //// If the player wishes to use advanced options, make them interactable
+            //EditorGUI.BeginDisabledGroup(!storyteller.useAdvanced);
+            //DrawAdvanced(serializedObject, storyteller.useAdvanced);
+            //// Don't make anything else uninteractable
+            //if (!storyteller.useAdvanced)
+            //{
+            //    EditorGUI.EndDisabledGroup();
+            //}
         }
+
+        /// <summary>
+        /// Draws the Advanced Menu in the inspector
+        /// </summary>
+        /// <param name="serializedObject"></param>
+        //private static void DrawAdvanced(SerializedObject serializedObject, bool useAdvanced)
+        //{
+        //    // Some space
+        //    EditorGUILayout.Space();
+
+        //    // Get the bool
+        //    bool showAdvanced = serializedObject.FindProperty("showAdvanced").boolValue;
+
+        //    // Begin checking for changes in the foldout
+        //    EditorGUI.BeginChangeCheck();
+        //    // Begins a field for dropdown. If using advanced options it is toggleable, else it is collapsed
+        //    showAdvanced = EditorGUILayout.Foldout(useAdvanced ? showAdvanced : false, "Advanced", true);
+
+        //    // If the foldout is changed, register it
+        //    if (EditorGUI.EndChangeCheck())
+        //    {
+        //        serializedObject.FindProperty("showAdvanced").boolValue = showAdvanced;
+        //    }
+
+        //    // If the ShowAdvanced dropdown menu is to be open, show the following
+        //    if (showAdvanced)
+        //    {
+        //        EditorGUI.indentLevel++;
+
+        //        // Property field to assign and unassign materials to the outlinedMaterial
+        //        EditorGUILayout.PropertyField(serializedObject.FindProperty("outlinedMaterial"));
+        //        // Property field to assign and unassign materials to the outlinedMaterial
+        //        EditorGUILayout.PropertyField(serializedObject.FindProperty("basicMaterial"));
+        //        // Some spacing
+        //        EditorGUILayout.Space();
+        //        // Show the Outline Actions
+        //        EditorGUILayout.PropertyField(serializedObject.FindProperty("outlineActions"));
+
+        //        EditorGUI.indentLevel--;
+        //    }
+
+        //    // Apply all changes made
+        //    serializedObject.ApplyModifiedProperties();
+        //}
     }
 #endif
     #endregion
