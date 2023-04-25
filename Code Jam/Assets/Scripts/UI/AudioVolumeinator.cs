@@ -3,6 +3,7 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
 
+// Originally written by Felix Bengtvig Krog during the Nordic Game Jam 2023
 namespace Felix.Settings
 {
     public class AudioVolumeinator : MonoBehaviour
@@ -46,7 +47,7 @@ namespace Felix.Settings
             inputAsNum = inputAsNum < 0.0001f ? 0.0001f : inputAsNum;
 
             UpdateFields(inputAsNum);
-            Debug.LogFormat("Input is: {0}", inputAsNum);
+            //Debug.LogFormat("Input is: {0}", inputAsNum);
 
             // Updates newVolume to one that works for the audio
             float newVolume = Mathf.Log10(inputAsNum) * 20;
