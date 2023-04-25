@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Storyteller : MonoBehaviour
 {
     [SerializeField, Tooltip("An array of all the story pages")] private StoryPage[] fullStory;
-    [SerializeField, Tooltip("The arrow to illustrate turning pages")] private StoryPage toNextArrow;
+    [SerializeField, Tooltip("The arrow to illustrate turning pages")] private Sprite toNextArrow;
 
     [SerializeField, Tooltip("How long an image is shown before the next one appears")] private float baseWaitLength = 1f;
     [SerializeField, Tooltip("The prefab that is to render story pages")] private GameObject pageRenderer;
@@ -18,13 +19,39 @@ public class Storyteller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Begin showing the page
         StartCoroutine(ShowNextPicture(fullStory[currentPage]));
+    }
+
+    /// <summary>
+    /// Registers input and translates it into function
+    /// </summary>
+    /// <param name="context"></param>
+    public void GotInput(InputAction.CallbackContext context)
+    {
+        // Only do stuff if context.performed
+        if (!context.performed)
+        {
+            return;
+        }
+
+        // If there are still images left, skip to the final image. Else turn the page
+        if (currentPage < fullStory.Length)
+        {
+            Debug.Log("Skipping");
+            SkipWait();
+        }
+        else
+        {
+            Debug.Log("Turning page");
+            TurnPage();
+        }
     }
 
     /// <summary>
     /// Turns over to the next page
     /// </summary>
-    public void TurnPage()
+    private void TurnPage()
     {
         // End all current coroutines (the stuff currently playing the next narration n such)
         StopAllCoroutines();
@@ -36,7 +63,7 @@ public class Storyteller : MonoBehaviour
     /// <summary>
     /// Skips waiting for the individual drawing to show up to finish a page
     /// </summary>
-    public void SkipWait()
+    private void SkipWait()
     {
         // End all current coroutines (the stuff currently showing the next page n such
         StopAllCoroutines();
@@ -50,9 +77,11 @@ public class Storyteller : MonoBehaviour
             narrationQueue.Enqueue(fullStory[currentPage].clip);
             currentPage++;
         }
+        // Show the to next arrow
+        ShowDrawing(toNextArrow);
 
         // Get the amount of time left in the current clip being played
-        float currentClipLength = narratorSource.clip.length;
+        float currentClipLength = narratorSource.clip != null ? narratorSource.clip.length : 0f;
         currentClipLength -= narratorSource.time;
         // Clamp minimum length
         if (currentClipLength <= 0.001f) currentClipLength = 0.001f;
@@ -66,8 +95,10 @@ public class Storyteller : MonoBehaviour
     /// <param name="sprite"></param>
     private void ShowDrawing(Sprite sprite)
     {
-        GameObject currentPage = Instantiate(pageRenderer, Vector3.zero, Quaternion.identity);
-        currentPage.GetComponent<SpriteRenderer>().sprite = sprite;
+        // Instantiate the new drawing and remember its sprite renderer
+        SpriteRenderer currentRenderer = Instantiate(pageRenderer, Vector3.zero, Quaternion.identity).GetComponent<SpriteRenderer>();
+        currentRenderer.sprite = sprite;
+        currentRenderer.sortingOrder = currentPage;
     }
 
     /// <summary>
@@ -98,7 +129,7 @@ public class Storyteller : MonoBehaviour
         // If there are any clips left, repeat this process
         if (narrationQueue.Count > 0)
         {
-            PlayQueuedClips(currentClip.length);
+            StartCoroutine(PlayQueuedClips(currentClip != null ? currentClip.length : 0.001f));
         }
     }
 
@@ -116,12 +147,16 @@ public class Storyteller : MonoBehaviour
         currentPage++;
 
         // Wait either until audio clip is over, or the default wait have passed, if no audio clip is attached to the page
-        yield return new WaitForSeconds(page.clip == null ? baseWaitLength : page.clip.length);
+        yield return new WaitForSeconds(page.clip == null ? ( page.specialWaitTime != 0 ? page.specialWaitTime : baseWaitLength ) : page.clip.length);
 
         // If there are still pages left, show the next page
         if (currentPage < fullStory.Length)
         {
             StartCoroutine(ShowNextPicture(fullStory[currentPage]));
+        }
+        else // If there are no pages left, show the turn page arrow
+        {
+            ShowDrawing(toNextArrow);
         }
     }
 }
