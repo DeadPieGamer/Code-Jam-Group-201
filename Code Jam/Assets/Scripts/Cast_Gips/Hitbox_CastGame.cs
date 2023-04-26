@@ -11,6 +11,7 @@ public class Hitbox_CastGame : MonoBehaviour
         if(slicable.getSlicedObject() == null){
             slicable.setSlicedObject(sliced);
             slicable.Slice();
+            Debug.Log("came from" + transform.name);
         }
     }
 }
