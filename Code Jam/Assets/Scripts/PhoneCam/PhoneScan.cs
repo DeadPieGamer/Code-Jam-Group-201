@@ -23,7 +23,7 @@ public class PhoneScan : MonoBehaviour
     private IEnumerator StartScan()
     {
         animator.SetBool("Scanning", true);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(1f);
         animator.SetBool("Scanning",false);
         yield return new WaitForSeconds(5f);
         sceneMang.LoadNextScene();
