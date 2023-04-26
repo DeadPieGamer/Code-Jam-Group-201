@@ -7,6 +7,8 @@ public class PhoneScan : MonoBehaviour
 {
     [SerializeField] private GameObject scanner;
     [SerializeField] private Animator animator;
+    [SerializeField] private LoadScene sceneMang;
+
     private void Start()
     {
         animator = scanner.GetComponent<Animator>();
@@ -23,5 +25,7 @@ public class PhoneScan : MonoBehaviour
         animator.SetBool("Scanning", true);
         yield return new WaitForSeconds(10f);
         animator.SetBool("Scanning",false);
+        yield return new WaitForSeconds(5f);
+        sceneMang.LoadNextScene();
     }
 }
