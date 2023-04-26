@@ -7,15 +7,15 @@ public class ChangeColor : MonoBehaviour
 {
     // Code inspired by "GameAssetWorld", YT link: https://www.youtube.com/watch?v=EzZGPRBchJo
 
-    public Image imageColor;
-    public Color color;
-    public Color[] colors;
+    public Image image;
+    public Sprite sprite;
+    public Sprite[] sprites;
     
 
     public void colorChange(int button)
     {
-        color = colors[button];
-        imageColor.color = color; 
+        sprite = sprites[button];
+        image.sprite = sprite; 
     }
 
 
