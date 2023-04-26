@@ -24,7 +24,7 @@ public class Slicable_Cast : MonoBehaviour
     }
 
     public void Slice(){
-         Debug.Log("slice!");
+        Debug.Log("slice!");
         unslicedObject.SetActive(false);
         slicedObject.SetActive(true);
 
