@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/BrokenLegScan.unity
     guid: 71e48bd7003a8804c9e912949d605e8d
   - enabled: 1
+    path: Assets/Scenes/PickColorCast.unity
+    guid: ecaecd129cbe1d64d81205ff860f4504
+  - enabled: 1
     path: "Assets/Scenes/TegneP\xE5Gips.unity"
     guid: 7d95af2b1292d8d4ea8937b669560334
   m_configObjects: {}

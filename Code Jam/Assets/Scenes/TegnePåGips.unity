@@ -374,8 +374,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1994072404}
   - component: {fileID: 1994072403}
+  - component: {fileID: 1994072405}
   m_Layer: 0
-  m_Name: Square
+  m_Name: CastPicture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -448,3 +449,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1994072405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994072402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b25e18ef102134c88712c1fa7e6f1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  sprites:
+  - {fileID: 21300000, guid: cb3f964ddabfe3c4abcb08f427deb49d, type: 3}
+  - {fileID: 21300000, guid: 897e8bbedc47c5240a835cd18b458c08, type: 3}
+  - {fileID: 21300000, guid: 9f8110d9b147e8e49b2b10eee2caf0df, type: 3}
+  - {fileID: 21300000, guid: ac518095f04fae64ea1dd83acfb7eb04, type: 3}
+  - {fileID: 21300000, guid: ac4c980f44fd6bb43a4327daaed2ecbb, type: 3}
+  - {fileID: 21300000, guid: 075029bbd4f52554f95dc456e7bf3a0e, type: 3}
+  - {fileID: 21300000, guid: d1384c125983d0149b1f058cefb5a62e, type: 3}
+  castRender: {fileID: 1994072403}
