@@ -158,6 +158,42 @@ PrefabInstance:
       propertyPath: fullStory.Array.data[1].specialWaitTime
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[0].storyImages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[1].storyImages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[2].storyImages.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[0].storyImages.Array.data[0].pageGraphic
+      value: 
+      objectReference: {fileID: 21300000, guid: 0499313185996254ebf8b7403f8f1963, type: 3}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[0].storyImages.Array.data[1].pageGraphic
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f6c4dcbf44e4eb449a677c00fdd483f, type: 3}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[0].storyImages.Array.data[2].pageGraphic
+      value: 
+      objectReference: {fileID: 21300000, guid: 891cc88837b53304bb7abaf3729d96fb, type: 3}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[1].storyImages.Array.data[0].pageGraphic
+      value: 
+      objectReference: {fileID: 21300000, guid: b8bae4a525b25154595f6dfb0c4bb7be, type: 3}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[1].storyImages.Array.data[1].pageGraphic
+      value: 
+      objectReference: {fileID: 21300000, guid: 794db0777ed6c034eaefce160bd893b4, type: 3}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[2].storyImages.Array.data[0].pageGraphic
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d7c1db70805f454ba8aa6ad8089bbef, type: 3}
     - target: {fileID: 4329425461258471270, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: m_Name
       value: StorytellingBaseSetup

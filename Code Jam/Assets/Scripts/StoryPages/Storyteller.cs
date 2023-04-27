@@ -14,14 +14,17 @@ public class Storyteller : MonoBehaviour
     [SerializeField, Tooltip("The audiosource that will narrate the text")] private AudioSource narratorSource;
 
     private Queue<AudioClip> narrationQueue = new Queue<AudioClip>();
-    
+
+    private List<GameObject> currentRenders = new List<GameObject>();
+
     private int currentPage = 0;
+    private int currentImage = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         // Begin showing the page
-        StartCoroutine(ShowNextPicture(fullStory[currentPage]));
+        StartCoroutine(ShowNextPicture(fullStory[currentPage].storyImages[currentImage]));
     }
 
     /// <summary>
@@ -36,8 +39,8 @@ public class Storyteller : MonoBehaviour
             return;
         }
 
-        // If there are still images left, skip to the final image. Else turn the page
-        if (currentPage < fullStory.Length)
+        // If there are still images (or the arrow) left on page, skip to the final image. Else turn the page
+        if (currentImage <= fullStory[currentPage].storyImages.Length)
         {
             Debug.Log("Skipping");
             SkipWait();
@@ -59,6 +62,28 @@ public class Storyteller : MonoBehaviour
         // Empty the narration queue and stop the current narration
         narrationQueue.Clear();
         narratorSource.Stop();
+        // If there are still pages left, do what needs to be done to show the next page
+        if (currentPage < fullStory.Length - 1)
+        {
+            // Go up a page
+            currentPage++;
+
+            // Destroy all currently rendered images
+            foreach (GameObject render in currentRenders)
+            {
+                Destroy(render);
+            }
+            currentRenders.Clear();
+
+            currentImage = 0;
+
+            // Begin showing the next page
+            StartCoroutine(ShowNextPicture(fullStory[currentPage].storyImages[currentImage]));
+        }
+        else
+        {
+            Debug.Log("Done showing these pages");
+        }
     }
 
     /// <summary>
@@ -70,15 +95,16 @@ public class Storyteller : MonoBehaviour
         StopAllCoroutines();
 
         // Go through the rest of the pages
-        while (currentPage < fullStory.Length)
+        while (currentImage < fullStory[currentPage].storyImages.Length)
         {
             // Show every page
-            ShowDrawing(fullStory[currentPage].pageGraphic);
+            ShowDrawing(fullStory[currentPage].storyImages[currentImage].pageGraphic);
             // Queue the narration
-            narrationQueue.Enqueue(fullStory[currentPage].clip);
-            currentPage++;
+            narrationQueue.Enqueue(fullStory[currentPage].storyImages[currentImage].clip);
+            currentImage++;
         }
         // Show the to next arrow
+        currentImage++;
         ShowDrawing(toNextArrow);
 
         // Get the amount of time left in the current clip being played
@@ -86,8 +112,13 @@ public class Storyteller : MonoBehaviour
         currentClipLength -= narratorSource.time;
         // Clamp minimum length
         if (currentClipLength <= 0.001f) currentClipLength = 0.001f;
-        // Begin playing queued clips
-        StartCoroutine(PlayQueuedClips(currentClipLength));
+
+        // If there are any queued clips left
+        if (narrationQueue.Count > 0)
+        {
+            // Begin playing queued clips
+            StartCoroutine(PlayQueuedClips(currentClipLength));
+        }
     }
 
     /// <summary>
@@ -99,7 +130,10 @@ public class Storyteller : MonoBehaviour
         // Instantiate the new drawing and remember its sprite renderer
         SpriteRenderer currentRenderer = Instantiate(pageRenderer, Vector3.zero, Quaternion.identity).GetComponent<SpriteRenderer>();
         currentRenderer.sprite = sprite;
-        currentRenderer.sortingOrder = currentPage;
+        currentRenderer.sortingOrder = currentImage;
+
+        // Remember the game object for later cleaning
+        currentRenders.Add(currentRenderer.gameObject);
     }
 
     /// <summary>
@@ -139,24 +173,25 @@ public class Storyteller : MonoBehaviour
     /// </summary>
     /// <param name="page"></param>
     /// <returns></returns>
-    private IEnumerator ShowNextPicture(StoryPage page)
+    private IEnumerator ShowNextPicture(StoryImage page)
     {
         // Show the page
         ShowDrawing(page.pageGraphic);
         // Play the connected audio clip
         NarrateClip(page.clip);
-        currentPage++;
+        currentImage++;
 
         // Wait either until audio clip is over, or the default wait have passed, if no audio clip is attached to the page
         yield return new WaitForSeconds(page.clip == null ? ( page.specialWaitTime != 0 ? page.specialWaitTime : baseWaitLength ) : page.clip.length);
 
-        // If there are still pages left, show the next page
-        if (currentPage < fullStory.Length)
+        // If there are still images left, show the next image
+        if (currentImage < fullStory[currentPage].storyImages.Length)
         {
-            StartCoroutine(ShowNextPicture(fullStory[currentPage]));
+            StartCoroutine(ShowNextPicture(fullStory[currentPage].storyImages[currentImage]));
         }
         else // If there are no pages left, show the turn page arrow
         {
+            currentImage++;
             ShowDrawing(toNextArrow);
         }
     }
