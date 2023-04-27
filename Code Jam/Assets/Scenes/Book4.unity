@@ -193,7 +193,7 @@ PrefabInstance:
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[1].storyImages.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 437d960ace9f05146bb7ffed81ab0e6d, type: 3}
+      objectReference: {fileID: 8300000, guid: f958eb244f476f149a408747cec1b9c0, type: 3}
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[2].storyImages.Array.data[0].clip
       value: 
