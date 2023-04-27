@@ -205,7 +205,7 @@ PrefabInstance:
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[0].storyImages.Array.data[0].pageGraphic
       value: 
-      objectReference: {fileID: 21300000, guid: 80553fd8cca85f940bf9c957a3b27743, type: 3}
+      objectReference: {fileID: 21300000, guid: 2c088637cdaf7704d89a5476f361a161, type: 3}
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[0].storyImages.Array.data[1].pageGraphic
       value: 
