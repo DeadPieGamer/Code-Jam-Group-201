@@ -199,6 +199,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: ffb336d84d91e5f4db7a82ee4ae0c95d, type: 3}
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
+      propertyPath: fullStory.Array.data[3].storyImages.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bb0f731f715c96d41b835a889dcaecd2, type: 3}
+    - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[0].storyImages.Array.data[0].pageGraphic
       value: 
       objectReference: {fileID: 21300000, guid: 0499313185996254ebf8b7403f8f1963, type: 3}

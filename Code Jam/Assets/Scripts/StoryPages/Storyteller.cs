@@ -82,7 +82,8 @@ public class Storyteller : MonoBehaviour
         }
         else
         {
-            Debug.Log("Done showing these pages");
+            Debug.Log("Done showing these pages, loading next scene");
+            GetComponent<LoadScene>().LoadNextScene();
         }
     }
 

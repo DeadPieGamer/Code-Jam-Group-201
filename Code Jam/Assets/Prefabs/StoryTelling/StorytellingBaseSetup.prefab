@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4329425460727157314}
   - component: {fileID: 4329425460727157319}
   - component: {fileID: 4329425460727157316}
+  - component: {fileID: 5059823936393298032}
   m_Layer: 0
   m_Name: Storyinator
   m_TagString: Untagged
@@ -193,6 +194,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5059823936393298032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4329425460727157315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d32dfcfb83105498b3711f2c923f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4329425460763083134
 GameObject:
   m_ObjectHideFlags: 0
