@@ -24,20 +24,23 @@ EditorBuildSettings:
     path: Assets/Scenes/ScanningLeg.unity
     guid: 17b89ad2cbfeba84b8012f48b248d262
   - enabled: 1
-    path: Assets/Scenes/Book2.unity
-    guid: 674fb8c7cf7edc14d9a9acaf81b12c86
-  - enabled: 1
     path: Assets/Scenes/BrokenLegScan.unity
     guid: 71e48bd7003a8804c9e912949d605e8d
   - enabled: 1
-    path: Assets/Scenes/Book3.unity
-    guid: 2acc60d06cf315e4bbab5fb67fb5c78a
+    path: Assets/Scenes/Book2.unity
+    guid: 674fb8c7cf7edc14d9a9acaf81b12c86
   - enabled: 1
     path: Assets/Scenes/PickColorCast.unity
     guid: ecaecd129cbe1d64d81205ff860f4504
   - enabled: 1
+    path: Assets/Scenes/Book3.unity
+    guid: 2acc60d06cf315e4bbab5fb67fb5c78a
+  - enabled: 1
     path: "Assets/Scenes/TegneP\xE5Gips.unity"
     guid: 7d95af2b1292d8d4ea8937b669560334
+  - enabled: 1
+    path: Assets/Scenes/Book4.unity
+    guid: e88d773cdec7ca346b68e57971a2385b
   - enabled: 1
     path: Assets/Scenes/GipsAf.unity
     guid: 928d63e21e84dba4bb60bd5b07acb5f5
