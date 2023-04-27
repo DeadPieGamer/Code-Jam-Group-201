@@ -15,7 +15,8 @@ public class SingletonSettings : MonoBehaviour
 
     float lastTimeScale = 0f;
     
-    private bool canPause = true;
+    private bool isBookScene = true;
+    private AudioSource narrationSource;
 
     // Start is called before the first frame update
     void Start()
@@ -41,13 +42,30 @@ public class SingletonSettings : MonoBehaviour
         float currentTimeScale = Time.timeScale;
         Time.timeScale = lastTimeScale;
         lastTimeScale = currentTimeScale;
+
+        // If this is a book scene, pause and unpause the narration
+        if (isBookScene)
+        {
+            if (pauseMenu.activeSelf)
+            {
+                narrationSource.Pause();
+            }
+            else
+            {
+                narrationSource.UnPause();
+            }
+        }
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // If it's a book scene, don't appear. Else appear in the corner
-        canPause = !scene.name.Contains(bookNamingConvention);
-        pauseButton.interactable = canPause;
+        isBookScene = !scene.name.Contains(bookNamingConvention);
+        //pauseButton.interactable = !isBookScene;
+        if (isBookScene) // If this is a book scene, get the narration audio player
+        {
+            narrationSource = GameObject.FindGameObjectWithTag("Storyinator").GetComponent<AudioSource>();
+        }
     }
 
     #region Scene Loading Events Setup

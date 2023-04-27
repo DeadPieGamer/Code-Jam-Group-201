@@ -1,0 +1,34 @@
+{
+    "name": "AccelerometerControls",
+    "maps": [
+        {
+            "name": "PhoneShake",
+            "id": "9b894ab1-c7bb-4bc8-b349-1b6c7f21e07c",
+            "actions": [
+                {
+                    "name": "Shaking",
+                    "type": "PassThrough",
+                    "id": "8b4a2a7f-2394-439a-9073-d719264c19ef",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2e1e9fdd-8edb-4cb6-9fb6-60a0d4e3ba1c",
+                    "path": "<Accelerometer>/acceleration",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shaking",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

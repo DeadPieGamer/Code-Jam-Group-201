@@ -30,15 +30,8 @@ public class Storyteller : MonoBehaviour
     /// <summary>
     /// Registers input and translates it into function
     /// </summary>
-    /// <param name="context"></param>
-    public void GotInput(InputAction.CallbackContext context)
+    public void GotInput()
     {
-        // Only do stuff if context.performed
-        if (!context.performed)
-        {
-            return;
-        }
-
         // If there are still images (or the arrow) left on page, skip to the final image. Else turn the page
         if (currentImage <= fullStory[currentPage].storyImages.Length)
         {
@@ -50,6 +43,21 @@ public class Storyteller : MonoBehaviour
             Debug.Log("Turning page");
             TurnPage();
         }
+    }
+
+    /// <summary>
+    /// Registers input and translates it into function
+    /// </summary>
+    /// <param name="context"></param>
+    public void GotInput(InputAction.CallbackContext context)
+    {
+        // Only do stuff if context.performed
+        if (!context.performed)
+        {
+            return;
+        }
+
+        GotInput();
     }
 
     /// <summary>
