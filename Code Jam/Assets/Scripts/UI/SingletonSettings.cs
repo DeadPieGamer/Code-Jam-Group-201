@@ -8,7 +8,7 @@ public class SingletonSettings : MonoBehaviour
 {
     public static SingletonSettings instance;
 
-    [SerializeField, Tooltip("What Book Scenes are called")] private string bookNamingConvention = "Bog Scene ";
+    [SerializeField, Tooltip("What Book Scenes are called")] private string bookNamingConvention = "Book";
 
     [SerializeField, Tooltip("The pause menu")] private GameObject pauseMenu;
     [SerializeField, Tooltip("The pause button")] private Button pauseButton;
