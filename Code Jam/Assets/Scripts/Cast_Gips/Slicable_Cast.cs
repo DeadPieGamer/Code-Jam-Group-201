@@ -27,14 +27,15 @@ public class Slicable_Cast : MonoBehaviour
         Debug.Log("slice!");
         unslicedObject.SetActive(false);
         slicedObject.SetActive(true);
+        if (m_collider != null) {
+            m_collider.enabled = false;
+            for (int i = 0; i < slicedObject.transform.childCount; i++)
+            {
+                Rigidbody2D sliceRigidbody = slicedObject.transform.GetChild(i).GetComponent<Rigidbody2D>();
+                sliceRigidbody.velocity = m_rigibody.velocity;
+            }
 
-        m_collider.enabled = false;
-        
-        for(int i = 0; i < slicedObject.transform.childCount; i++){
-            Rigidbody2D sliceRigidbody = slicedObject.transform.GetChild(i).GetComponent<Rigidbody2D>();
-            sliceRigidbody.velocity = m_rigibody.velocity;
+            m_rigibody.bodyType = RigidbodyType2D.Static;
         }
-
-        m_rigibody.bodyType = RigidbodyType2D.Static;
     }
 }
