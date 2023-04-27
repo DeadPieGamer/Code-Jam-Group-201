@@ -12,6 +12,8 @@ public class SingletonSettings : MonoBehaviour
 
     [SerializeField, Tooltip("The pause menu")] private GameObject pauseMenu;
     [SerializeField, Tooltip("The pause button")] private Button pauseButton;
+
+    float lastTimeScale = 0f;
     
     private bool canPause = true;
 
@@ -35,6 +37,10 @@ public class SingletonSettings : MonoBehaviour
     public void TogglePauseMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
+        // Pause or unpause the timescale
+        float currentTimeScale = Time.timeScale;
+        Time.timeScale = lastTimeScale;
+        lastTimeScale = currentTimeScale;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
