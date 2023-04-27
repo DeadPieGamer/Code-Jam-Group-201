@@ -11,14 +11,12 @@ public class PhoneCam : MonoBehaviour
 
     private bool camAvailable;
     private WebCamTexture backcam;
-    private Texture defualtBackground;
 
     public RawImage background;
     public AspectRatioFitter fit;
 
     private void Start()
     {
-        defualtBackground = background.texture;
         WebCamDevice[] devices = WebCamTexture.devices;
 
         if (devices.Length == 0 )

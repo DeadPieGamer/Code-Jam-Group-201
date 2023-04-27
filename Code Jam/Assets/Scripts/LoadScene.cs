@@ -18,7 +18,15 @@ public class LoadScene : MonoBehaviour
     public void LoadNextScene()
     {
         int scene = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(scene + 1);
+        // If there are still scenes, load the next one. Otherwise, load the first scene
+        if (scene + 1 < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(scene + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     } 
     
 }

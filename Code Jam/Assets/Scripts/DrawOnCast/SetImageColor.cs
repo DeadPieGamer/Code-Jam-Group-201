@@ -12,10 +12,4 @@ public class SetImageColor : MonoBehaviour
         colorNumber = PlayerPrefs.GetInt("Picked Color");
         Debug.Log(colorNumber);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
