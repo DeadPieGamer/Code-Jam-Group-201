@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80aeef9fd73063546ab1a56deb1718da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valueName: Master
+  valueName: Alting
   baseValue: 1
   mySlider: {fileID: 3817885732353665093}
   inputField: {fileID: 3817885732306882667}

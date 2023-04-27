@@ -83,13 +83,13 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: dfad6939f555f3b4da72cb60b43ab773
-    name: Master
+    name: Alting
   - guid: 4a2ab1e8b6080dc48ade03f7a44e63cf
-    name: Music
+    name: Musik
   - guid: 62894d3685ccee54b855174a3e15b9e1
-    name: Narration
+    name: Stemme
   - guid: 17a51d5d9b0ab5d47ae2a15cbef48694
-    name: SFX
+    name: Effekter
   m_AudioMixerGroupViews:
   - guids:
     - 8b766c7b72394d1499285851d36c55ee
