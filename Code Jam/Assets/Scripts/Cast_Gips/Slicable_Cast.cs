@@ -24,7 +24,7 @@ public class Slicable_Cast : MonoBehaviour
     }
 
     public void Slice(){
-        Debug.Log("slice!");
+        //Debug.Log("slice!");
         unslicedObject.SetActive(false);
         slicedObject.SetActive(true);
         if (m_collider != null) {
@@ -39,3 +39,4 @@ public class Slicable_Cast : MonoBehaviour
         }
     }
 }
+//Inspo from 1 Minute Unity youtube.com/watch?v=muPZvw7CU-0&t=509s
