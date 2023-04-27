@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GipsAf.unity
     guid: 928d63e21e84dba4bb60bd5b07acb5f5
+  - enabled: 1
+    path: Assets/Scenes/Book5.unity
+    guid: 9728ad46d0b415545944d9a705e812a8
   m_configObjects: {}
