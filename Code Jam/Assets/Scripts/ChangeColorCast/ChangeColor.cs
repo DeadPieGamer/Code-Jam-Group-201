@@ -10,14 +10,11 @@ public class ChangeColor : MonoBehaviour
     public Image image;
     public Sprite sprite;
     public Sprite[] sprites;
-    
 
     public void colorChange(int button)
     {
         sprite = sprites[button];
-        image.sprite = sprite; 
+        image.sprite = sprite;
+        PlayerPrefs.SetInt("Picked Color", button);
     }
-
-
-   
 }
