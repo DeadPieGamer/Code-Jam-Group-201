@@ -10,24 +10,29 @@ public class Slicable_Cast : MonoBehaviour
     private Rigidbody2D m_rigibody;
     private Collider2D m_collider;
 
-    private void Awake() {
+    private void Awake()
+    {
         m_rigibody = GetComponent<Rigidbody2D>();
         m_collider = GetComponent<Collider2D>();
     }
 
-    public void setSlicedObject(GameObject slicedObject){
+    public void setSlicedObject(GameObject slicedObject)
+    {
         this.slicedObject = slicedObject;
     }
 
-    public GameObject getSlicedObject(){
+    public GameObject getSlicedObject()
+    {
         return slicedObject;
     }
 
-    public void Slice(){
+    public void Slice()
+    {
         //Debug.Log("slice!");
         unslicedObject.SetActive(false);
         slicedObject.SetActive(true);
-        if (m_collider != null) {
+        if (m_collider != null)
+        {
             m_collider.enabled = false;
             for (int i = 0; i < slicedObject.transform.childCount; i++)
             {

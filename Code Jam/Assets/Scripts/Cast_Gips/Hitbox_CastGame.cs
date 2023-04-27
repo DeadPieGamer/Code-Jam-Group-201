@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Hitbox_CastGame : MonoBehaviour
 {
+    //reference of our Slicable_Cast script 
     [SerializeField] private Slicable_Cast slicable;
+
     [SerializeField] private GameObject sliced;
 
     public void OnMouseExit() {
