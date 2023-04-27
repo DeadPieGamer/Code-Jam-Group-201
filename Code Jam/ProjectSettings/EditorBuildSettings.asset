@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/TegneP\xE5Gips.unity"
     guid: 7d95af2b1292d8d4ea8937b669560334
+  - enabled: 1
+    path: Assets/Scenes/GipsAf.unity
+    guid: 928d63e21e84dba4bb60bd5b07acb5f5
   m_configObjects: {}
