@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Slicable_Cast : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Slicable_Cast : MonoBehaviour
 
     private Rigidbody2D m_rigibody;
     private Collider2D m_collider;
+
+    [SerializeField] private LoadScene sceneManager;
+    private float wait = 1.5f;
 
     private void Awake()
     {
@@ -38,10 +42,19 @@ public class Slicable_Cast : MonoBehaviour
             {
                 Rigidbody2D sliceRigidbody = slicedObject.transform.GetChild(i).GetComponent<Rigidbody2D>();
                 sliceRigidbody.velocity = m_rigibody.velocity;
-            }
+
+                }
 
             m_rigibody.bodyType = RigidbodyType2D.Static;
         }
+        
+        StartCoroutine(loadnext());
+    }
+
+    private IEnumerator loadnext()
+    {
+        yield return new WaitForSeconds(wait);
+        sceneManager.LoadNextScene();
     }
 }
 //Inspo from 1 Minute Unity youtube.com/watch?v=muPZvw7CU-0&t=509s
