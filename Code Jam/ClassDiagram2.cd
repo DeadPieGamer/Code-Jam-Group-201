@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Story Telling">
+    <Position X="2.702" Y="0.524" Height="0.331" Width="0.921" />
+  </Comment>
+  <Comment CommentText="Settings Menu">
+    <Position X="2.658" Y="6.145" Height="0.295" Width="1.053" />
+  </Comment>
+  <Comment CommentText="Phone Scan Game">
+    <Position X="11.68" Y="0.5" Height="0.367" Width="1.353" />
+  </Comment>
+  <Comment CommentText="Cast Cutting Game">
+    <Position X="7.498" Y="6.193" Height="0.343" Width="1.317" />
+  </Comment>
+  <Comment CommentText="Cast Drawing Game">
+    <Position X="12.072" Y="6.157" Height="0.307" Width="1.353" />
+  </Comment>
+  <Comment CommentText="Cast Color Choosing">
+    <Position X="16.522" Y="6.264" Height="0.307" Width="1.353" />
+  </Comment>
+  <Comment CommentText="Scene Loading">
+    <Position X="7.931" Y="0.516" Height="0.291" Width="1.035" />
+  </Comment>
+  <Class Name="CastColor">
+    <Position X="15.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAAAAAAAAAAAAAAABAAAAAAAEAAAACAAAA=</HashCode>
+      <FileName>Assets\CastColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Follow_Mouse">
+    <Position X="6.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Cast_Gips\Follow_Mouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hitbox_CastGame">
+    <Position X="6.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Cast_Gips\Hitbox_CastGame.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="slicable" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Slicable_Cast">
+    <Position X="8.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAQAAEEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAEEA=</HashCode>
+      <FileName>Assets\Scripts\Cast_Gips\Slicable_Cast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChangeColor">
+    <Position X="17.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAEBAAEAAAAEAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\ChangeColorCast\ChangeColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ColorChangeByNum">
+    <Position X="15.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAAAAAAAAAAAAAAACAAEAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\ColorChangeByNum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SetImageColor">
+    <Position X="11" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DrawOnCast\SetImageColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadScene">
+    <Position X="7.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\LoadScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PhoneCam">
+    <Position X="12.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAKAAAAAAAAAAEAAAAAAAQAAAAAAABAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\PhoneCam\PhoneCam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PhoneScan">
+    <Position X="10.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAEAAAAACAAAAAEAAAAAEAAMAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\PhoneCam\PhoneScan.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="sceneMang" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Storyteller">
+    <Position X="1.25" Y="1" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Storyteller.StorytellerEditor" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\StoryPages\Storyteller.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAKAICEAAAAEFAAAIAgAAAAAAACAQogAAAAA=</HashCode>
+      <FileName>Assets\Scripts\StoryPages\Storyteller.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="fullStory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="LoadAudioSettings">
+    <Position X="1.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\LoadAudioSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SingletonSettings">
+    <Position X="1.25" Y="6.75" Width="1.5" />
+    <AssociationLine Name="instance" Type="SingletonSettings" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.812" Y="9.973" />
+        <Point X="1.812" Y="10.223" />
+        <Point X="2.312" Y="10.223" />
+        <Point X="2.312" Y="9.973" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.058" Y="0.24" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAIABACAAAAAAAAAABAAAAMACAAAAAACAg=</HashCode>
+      <FileName>Assets\Scripts\UI\SingletonSettings.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="instance" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Shady.Draw">
+    <Position X="13" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAgCQQCAAAAAAAAAAAAAAAAAEAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\DrawOnCast\Draw.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Felix.Settings.AudioVolumeinator">
+    <Position X="3.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACEEBiEACBAAIAgAIAAAAAAAAAAAAAICAQAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\AudioVolumeinator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="StoryImage">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAgAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\StoryPages\StoryImage.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="StoryPage">
+    <Position X="3.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\StoryPages\StoryPage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="storyImages" />
+    </ShowAsAssociation>
+  </Struct>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
