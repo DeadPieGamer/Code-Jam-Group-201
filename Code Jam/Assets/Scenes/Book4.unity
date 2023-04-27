@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[0].storyImages.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[1].storyImages.Array.size
@@ -242,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[0].storyImages.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: babd765ce84c701449b519ef49d690c0, type: 3}
+      objectReference: {fileID: 8300000, guid: e33c0ab44895e204893cac2b7e4449f2, type: 3}
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[0].storyImages.Array.data[1].clip
       value: 
@@ -270,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[0].storyImages.Array.data[0].pageGraphic
       value: 
-      objectReference: {fileID: 21300000, guid: 8cfad2e48a6d28544915a418c8d941ea, type: 3}
+      objectReference: {fileID: 21300000, guid: 37824631072462347a060021a0902e68, type: 3}
     - target: {fileID: 4329425460727157314, guid: 42b808b02af85eb43b5fb23d62aa8f36, type: 3}
       propertyPath: fullStory.Array.data[0].storyImages.Array.data[1].pageGraphic
       value: 
