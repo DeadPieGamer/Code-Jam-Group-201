@@ -8,6 +8,8 @@
   Meleese Kærhavn
   
   In Github Repository, the folder ``Code Jam`` contains the Unity Project. The executable files can be found in the folder ``Builds``. It plays the interactive story of Clara that breaks her leg and visits the doctor to get a cast on her leg. 
+  UML Diagrams can be found in the ``ForHandIn`` folder
+ 
   
   
   
