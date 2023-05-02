@@ -11,10 +11,15 @@ namespace Shady
         [SerializeField] Camera Cam = null;
         [SerializeField] LineRenderer trailPrefab = null;
 
+        //These are serialized private fields. They can be edited in the Inspector and accessed by other scripts. The Camera field represents the camera that the raycast will originate from,
+        //and the LineRenderer field is the trail prefab used to create the line.
+
         private LineRenderer currentTrail;
         private List<Vector3> points = new List<Vector3>();
 
-        void Start()
+        //These are private fields that keep track of the current line being drawn and a list of points used to define the line.
+
+        void Start() //This is the Start() method, which is called once when the script starts. If the Camera field is not set, it is set to the main camera.
         {
             if (!Cam)
             {
@@ -22,7 +27,9 @@ namespace Shady
             }//if end
         }//Start() eend
 
-        // Update is called once per frame
+
+        // Update is called once per frame. If the left mouse button is pressed, the CreateNewLine() method is called to start a new line. If the left mouse button is held down, the AddPoint()
+        // method is called to add a new point to the current line. If the "R" key is pressed, all child objects of the transform are destroyed, effectively clearing the screen of lines.
         void Update()
         {
             if (Input.GetMouseButtonDown(0))
@@ -48,14 +55,14 @@ namespace Shady
             //UpdateLinePoints();
         }//Update() end
 
-        private void CreateNewLine()
+        private void CreateNewLine() //This is the CreateNewLine() method, which instantiates a new LineRenderer trail and sets its parent to the current object. The points list is cleared so that a new line can be drawn.
         {
             currentTrail = Instantiate(trailPrefab);
             currentTrail.transform.SetParent(transform, true);
             points.Clear();
         }//CreateCurrentTrail() end
-
-        private void UpdateLinePoints()
+         
+        private void UpdateLinePoints() //This is the UpdateLinePoints() method, which updates the LineRenderer trail by setting its position count and positions.
         {
             if (currentTrail != null && points.Count > 1)
             {
