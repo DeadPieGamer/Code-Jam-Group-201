@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Book3.unity
     guid: 2acc60d06cf315e4bbab5fb67fb5c78a
   - enabled: 1
-    path: "Assets/Scenes/TegneP\xE5Gips.unity"
+    path: "Assets/CodeJam_Jun_Ying_Tan/TegnePa\u030AGips.unity"
     guid: 7d95af2b1292d8d4ea8937b669560334
   - enabled: 1
     path: Assets/Scenes/Book4.unity
