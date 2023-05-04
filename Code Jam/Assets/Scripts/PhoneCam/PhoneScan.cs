@@ -13,8 +13,10 @@ public class PhoneScan : MonoBehaviour
 
     private float gravity = 0.98f;
 
-    private float shortwait = 1f;
-    private float longwait = 5f;
+    private float waitLength = 6f;
+
+    // New variable added, to remove instances of a Magic String
+    private string scanAnimName = "Scanning";
 
     public void CheckAccelerometer(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
@@ -35,7 +37,7 @@ public class PhoneScan : MonoBehaviour
                 // Stop the scan
                 StopAllCoroutines();
                 // Tell the animator I ain't scanning anymore
-                scannerAnimator.SetBool("Scanning", false);
+                scannerAnimator.SetBool(scanAnimName, false);
             }
         }
     }
@@ -49,9 +51,9 @@ public class PhoneScan : MonoBehaviour
 
     private IEnumerator StartScan()
     {
-        scannerAnimator.SetBool("Scanning", true);
-        yield return new WaitForSeconds(shortwait);
-        yield return new WaitForSeconds(longwait);
+        scannerAnimator.SetBool(scanAnimName, true);
+        // Changed this to only have one wait instead of two
+        yield return new WaitForSeconds(waitLength);
         sceneMang.LoadNextScene();
     }
 }

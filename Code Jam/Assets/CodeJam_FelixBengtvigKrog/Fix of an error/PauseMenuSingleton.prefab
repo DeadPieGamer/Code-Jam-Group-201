@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6889826682521803148}
   - component: {fileID: 6889826682521803149}
   - component: {fileID: 6889826682521803150}
-  - component: {fileID: 6889826682521803151}
+  - component: {fileID: 7471660245305573618}
   - component: {fileID: 2825698318017969123}
   m_Layer: 5
   m_Name: PauseMenuSingleton
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6889826682521803151
+--- !u!114 &7471660245305573618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,12 +113,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6889826682521803144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e5bad8203c65846b4ab54d31e57878, type: 3}
+  m_Script: {fileID: 11500000, guid: 67118fcd74d72bd45b8ee4e19773bc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bookNamingConvention: Book
   pauseMenu: {fileID: 6889826682796468815}
-  pauseButton: {fileID: 6889826682994518502}
 --- !u!82 &2825698318017969123
 AudioSource:
   m_ObjectHideFlags: 0
@@ -430,7 +429,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6889826682521803151}
+      - m_Target: {fileID: 7471660245305573618}
         m_TargetAssemblyTypeName: SingletonSettings, Assembly-CSharp
         m_MethodName: TogglePauseMenu
         m_Mode: 1
@@ -587,7 +586,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 6889826682521803151}
+      - m_Target: {fileID: 7471660245305573618}
         m_TargetAssemblyTypeName: SingletonSettings, Assembly-CSharp
         m_MethodName: TogglePauseMenu
         m_Mode: 1
