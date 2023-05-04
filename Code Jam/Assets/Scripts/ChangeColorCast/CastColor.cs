@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Sprites;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CastColor : MonoBehaviour
 {
-  
-    // Code inspired by "GameAssetWorld", YT link: https://www.youtube.com/watch?v=EzZGPRBchJo
 
+    // Code inspired by "GameAssetWorld", YT link: https://www.youtube.com/watch?v=EzZGPRBchJo
+    public static string prefColorName = "Picked Color";
     public Sprite sprite;
     public Sprite[] sprites;
     public SpriteRenderer castRender;
@@ -20,7 +21,7 @@ public class CastColor : MonoBehaviour
     }
     private void Start()
     {
-        colorChange(PlayerPrefs.GetInt("Picked Color"));
+        colorChange(PlayerPrefs.GetInt(prefColorName));
     }
 }
 

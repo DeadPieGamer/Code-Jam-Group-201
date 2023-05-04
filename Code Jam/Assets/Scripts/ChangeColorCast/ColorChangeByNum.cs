@@ -9,16 +9,17 @@ public class ColorChangeByNum : MonoBehaviour
 
     public Color color;
     public Color[] colors;
-    public SpriteRenderer CastColor;
+    public SpriteRenderer castColor;
 
-
+    string prefColor = CastColor.prefColorName;
+    
     public void colorChange(int button)
     {
         color = colors[button];
-        CastColor.color = color;
+        castColor.color = color;
     }
     private void Start()
     {
-        colorChange(PlayerPrefs.GetInt("Picked Color"));
+        colorChange(PlayerPrefs.GetInt(prefColor));
     }
 }

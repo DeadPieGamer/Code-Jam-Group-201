@@ -20,6 +20,8 @@ public class Storyteller : MonoBehaviour
     private int currentPage = 0;
     private int currentImage = 0;
 
+    float almostInstant = 0.001f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -120,7 +122,7 @@ public class Storyteller : MonoBehaviour
         float currentClipLength = narratorSource.clip != null ? narratorSource.clip.length : 0f;
         currentClipLength -= narratorSource.time;
         // Clamp minimum length
-        if (currentClipLength <= 0.001f) currentClipLength = 0.001f;
+        if (currentClipLength <= almostInstant) currentClipLength = almostInstant;
 
         // If there are any queued clips left
         if (narrationQueue.Count > 0)
@@ -173,7 +175,7 @@ public class Storyteller : MonoBehaviour
         // If there are any clips left, repeat this process
         if (narrationQueue.Count > 0)
         {
-            StartCoroutine(PlayQueuedClips(currentClip != null ? currentClip.length : 0.001f));
+            StartCoroutine(PlayQueuedClips(currentClip != null ? currentClip.length : almostInstant));
         }
     }
 

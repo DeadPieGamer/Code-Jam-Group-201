@@ -15,12 +15,15 @@ public class ChangeColor : MonoBehaviour
 
     public Button okButton;
 
+    string prefColor = CastColor.prefColorName;
+    string conditionName = "Moving";
+
     public void colorChange(int button)
     {
         sprite = sprites[button];
         image.sprite = sprite;
-        PlayerPrefs.SetInt("Picked Color", button);
-        okAnimator.SetBool("Moving", true);
+        PlayerPrefs.SetInt(prefColor, button);
+        okAnimator.SetBool(conditionName, true);
         okButton.enabled = true;
     }
     private void Start()

@@ -17,6 +17,9 @@ namespace Felix.Settings
         [SerializeField, Tooltip("Text field to write name of slider")] private TextMeshProUGUI nameField;
         [SerializeField, Tooltip("The mixer which will have its volume changed")] private AudioMixer mixer;
 
+        float minVolume = 0.0001f;
+        int volumeMultiplayer = 20;
+
         /// <summary>
         /// Changes mixer volume and updates input field
         /// </summary>
@@ -25,12 +28,12 @@ namespace Felix.Settings
         {
             // Clamping
             newVolume = newVolume > 1f ? 1f : newVolume;
-            newVolume = newVolume < 0.0001f ? 0.0001f : newVolume;
+            newVolume = newVolume < minVolume ? minVolume : newVolume;
 
             UpdateInputField(newVolume);
 
             // Updates newVolume to one that works for the audio
-            newVolume = Mathf.Log10(newVolume) * 20;
+            newVolume = Mathf.Log10(newVolume) * volumeMultiplayer;
             mixer.SetFloat(valueName, newVolume);
         }
 
@@ -44,13 +47,13 @@ namespace Felix.Settings
 
             // Clamping
             inputAsNum = inputAsNum > 1f ? 1f : inputAsNum;
-            inputAsNum = inputAsNum < 0.0001f ? 0.0001f : inputAsNum;
+            inputAsNum = inputAsNum < minVolume ? minVolume : inputAsNum;
 
             UpdateFields(inputAsNum);
             //Debug.LogFormat("Input is: {0}", inputAsNum);
 
             // Updates newVolume to one that works for the audio
-            float newVolume = Mathf.Log10(inputAsNum) * 20;
+            float newVolume = Mathf.Log10(inputAsNum) * volumeMultiplayer;
 
             mixer.SetFloat(valueName, newVolume);
         }
