@@ -16,6 +16,8 @@ public class PhoneScan : MonoBehaviour
     private float shortwait = 1f;
     private float longwait = 5f;
 
+    private string conditionName = "Scanning";
+
     public void CheckAccelerometer(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         float acceleration = context.ReadValue<Vector3>().magnitude;
@@ -35,7 +37,7 @@ public class PhoneScan : MonoBehaviour
                 // Stop the scan
                 StopAllCoroutines();
                 // Tell the animator I ain't scanning anymore
-                scannerAnimator.SetBool("Scanning", false);
+                scannerAnimator.SetBool(conditionName, false);
             }
         }
     }
@@ -49,7 +51,7 @@ public class PhoneScan : MonoBehaviour
 
     private IEnumerator StartScan()
     {
-        scannerAnimator.SetBool("Scanning", true);
+        scannerAnimator.SetBool(conditionName, true);
         yield return new WaitForSeconds(shortwait);
         yield return new WaitForSeconds(longwait);
         sceneMang.LoadNextScene();
