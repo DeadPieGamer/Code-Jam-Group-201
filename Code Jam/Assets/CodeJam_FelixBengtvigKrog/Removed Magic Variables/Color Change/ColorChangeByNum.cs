@@ -19,6 +19,7 @@ public class ColorChangeByNum : MonoBehaviour
     }
     private void Start()
     {
-        colorChange(PlayerPrefs.GetInt("Picked Color"));
+        // Replaced the hardcoded PlayerPref name with a variable
+        colorChange(PlayerPrefs.GetInt(ChangeColor.colorPlayerPref));
     }
 }

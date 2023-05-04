@@ -119,7 +119,7 @@ public class Storyteller : MonoBehaviour
         // Get the amount of time left in the current clip being played
         float currentClipLength = narratorSource.clip != null ? narratorSource.clip.length : 0f;
         currentClipLength -= narratorSource.time;
-        // Clamp minimum length
+        // Clamp minimum length (I realise this is a magic number, but it's just some arbitrary small number, referencing a time length in seconds)
         if (currentClipLength <= 0.001f) currentClipLength = 0.001f;
 
         // If there are any queued clips left
@@ -173,6 +173,7 @@ public class Storyteller : MonoBehaviour
         // If there are any clips left, repeat this process
         if (narrationQueue.Count > 0)
         {
+            // (Again, I realise this is a magic number, but it's just some arbitrary small number, referencing a time length in seconds)
             StartCoroutine(PlayQueuedClips(currentClip != null ? currentClip.length : 0.001f));
         }
     }

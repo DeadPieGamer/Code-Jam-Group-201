@@ -15,11 +15,15 @@ public class ChangeColor : MonoBehaviour
 
     public Button okButton;
 
+    // Made a static string for the name of the PlayerPref int that stores the color choice.
+    [HideInInspector] public static string colorPlayerPref { get; private set; } = "Picked Color";
+
     public void colorChange(int button)
     {
         sprite = sprites[button];
         image.sprite = sprite;
-        PlayerPrefs.SetInt("Picked Color", button);
+        // Replaced the hardcoded PlayerPref name with a variable
+        PlayerPrefs.SetInt(colorPlayerPref, button);
         okAnimator.SetBool("Moving", true);
         okButton.enabled = true;
     }

@@ -9,7 +9,8 @@ public class SetImageColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        colorNumber = PlayerPrefs.GetInt("Picked Color");
+        // Replaced the hardcoded PlayerPref name with a variable
+        colorNumber = PlayerPrefs.GetInt(ChangeColor.colorPlayerPref);
         Debug.Log(colorNumber);
     }
 }
