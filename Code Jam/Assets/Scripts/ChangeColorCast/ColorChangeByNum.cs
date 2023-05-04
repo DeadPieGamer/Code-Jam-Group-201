@@ -9,13 +9,13 @@ public class ColorChangeByNum : MonoBehaviour
 
     public Color color;
     public Color[] colors;
-    public SpriteRenderer CastColor;
+    public SpriteRenderer castColor;
 
 
     public void colorChange(int button)
     {
         color = colors[button];
-        CastColor.color = color;
+        castColor.color = color;
     }
     private void Start()
     {

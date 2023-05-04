@@ -60,7 +60,7 @@ public class SingletonSettings : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // If it's a book scene, don't appear. Else appear in the corner
-        isBookScene = !scene.name.Contains(bookNamingConvention);
+        isBookScene = scene.name.Contains(bookNamingConvention);
         //pauseButton.interactable = !isBookScene;
         if (isBookScene) // If this is a book scene, get the narration audio player
         {

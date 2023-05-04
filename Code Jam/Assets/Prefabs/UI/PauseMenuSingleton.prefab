@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e5bad8203c65846b4ab54d31e57878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bookNamingConvention: 'Bog Scene '
+  bookNamingConvention: Book
   pauseMenu: {fileID: 6889826682796468815}
   pauseButton: {fileID: 6889826682994518502}
 --- !u!82 &2825698318017969123

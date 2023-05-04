@@ -11,6 +11,8 @@ public class PhoneScan : MonoBehaviour
     private int currentShakeCount = 0;
     private int maxShakes = 3;
 
+    private string scanAnimation = "Scanning";
+
     private float gravity = 0.98f;
 
     private float shortwait = 1f;
@@ -35,7 +37,7 @@ public class PhoneScan : MonoBehaviour
                 // Stop the scan
                 StopAllCoroutines();
                 // Tell the animator I ain't scanning anymore
-                scannerAnimator.SetBool("Scanning", false);
+                scannerAnimator.SetBool(scanAnimation, false);
             }
         }
     }
@@ -49,7 +51,7 @@ public class PhoneScan : MonoBehaviour
 
     private IEnumerator StartScan()
     {
-        scannerAnimator.SetBool("Scanning", true);
+        scannerAnimator.SetBool(scanAnimation, true);
         yield return new WaitForSeconds(shortwait);
         yield return new WaitForSeconds(longwait);
         sceneMang.LoadNextScene();

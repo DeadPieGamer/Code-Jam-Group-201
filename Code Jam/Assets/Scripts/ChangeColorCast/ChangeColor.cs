@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Sprites;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +13,9 @@ public class ChangeColor : MonoBehaviour
     public Sprite[] sprites;
 
     public Animator okAnimator;
-
     public Button okButton;
+
+    public static string colorString = "Picked Color";
 
     public void colorChange(int button)
     {
