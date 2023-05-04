@@ -21,7 +21,6 @@ public class Snap_Cast : MonoBehaviour
         _instance.takeSnap(width, height); 
     }
 
-
     private void Start()
     {
         _instance = this;
@@ -30,7 +29,7 @@ public class Snap_Cast : MonoBehaviour
     private void takeSnap(int width, int height)
     {
         _cam.targetTexture =
-            RenderTexture.GetTemporary(width, height, 16); //why 16 ?
+            RenderTexture.GetTemporary(width, height, 16);//16 WHY????
         _takeScreenSnap = true;
     }
     private void OnPostRender()
@@ -52,12 +51,12 @@ public class Snap_Cast : MonoBehaviour
 
             //apply texture
             _myDisplay.GetComponent<Renderer>().material.mainTexture = renderResult;
+            DontDestroyOnLoad(this._myDisplay);
 
             //save to file
             if (_saveFile==true)
             {
                 byte[] bytes = renderResult.EncodeToPNG();
-                //System.IO.File.WriteAllBytes("/Asset/CodeJam_Jun_Ying_Tan/snap.png/", bytes);
                 string Path = Application.persistentDataPath + "/" + Filename + ".png";
                 File.WriteAllBytes(Path, bytes);
             }

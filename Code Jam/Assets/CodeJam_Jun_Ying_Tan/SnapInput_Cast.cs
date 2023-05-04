@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class SnapInput_Cast : MonoBehaviour
 {
-    [SerializeField] Button SnapButton;
+    public Button SnapButton;
 
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        SnapButton.onClick.AddListener(SnapShot);
+    }
+    void SnapShot()
+    {
         {
             //Calling the funktion from the other code 
             Snap_Cast.TakeSnap_Static(Screen.width, Screen.height);
