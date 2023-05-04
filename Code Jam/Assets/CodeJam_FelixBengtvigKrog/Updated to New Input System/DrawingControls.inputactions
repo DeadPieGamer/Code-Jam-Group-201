@@ -1,0 +1,76 @@
+{
+    "name": "DrawingControls",
+    "maps": [
+        {
+            "name": "Drawing",
+            "id": "5a39a8b2-b20b-4eb6-9ca8-c51d669e76fc",
+            "actions": [
+                {
+                    "name": "DrawPosition",
+                    "type": "PassThrough",
+                    "id": "eec30121-8da5-4f37-a0e0-83bf77b073d5",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DrawInput",
+                    "type": "Button",
+                    "id": "de239c76-2558-48d7-aaf8-78a124483c6d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "640668ae-2382-41b0-8db0-bfc862636f82",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrawPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8f785f09-8f0e-4207-b383-8509ef78c3ed",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrawPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "193c9039-3987-4954-b5f1-828141c04cb0",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrawInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0e10c19-cbbd-4fe8-b37b-397e6256aa7f",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DrawInput",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

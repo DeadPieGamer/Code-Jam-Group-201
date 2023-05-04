@@ -25,10 +25,12 @@ public class ChangeColor : MonoBehaviour
         // Replaced the hardcoded PlayerPref name with a variable
         PlayerPrefs.SetInt(colorPlayerPref, button);
         okAnimator.SetBool("Moving", true);
-        okButton.enabled = true;
+        // Changed from enabling entire button component to just making it interactable
+        okButton.interactable = true;
     }
     private void Start()
     {
-        okButton.enabled = false;
+        // Changed from disabling entire button component to just making it not interactable. I just think it looks nicer as it becomes semi-transparent with this
+        okButton.interactable = false;
     }
 }
