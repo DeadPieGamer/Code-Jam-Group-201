@@ -19,6 +19,8 @@ public class PhoneScan : MonoBehaviour
     public void CheckAccelerometer(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         float acceleration = context.ReadValue<Vector3>().magnitude;
+        private string scanLineAnimation = "Scanning";
+    
 
         acceleration -= gravity;
 
