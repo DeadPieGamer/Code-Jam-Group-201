@@ -9,7 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: d07b050771766374ea792c90420ebdfb
   - enabled: 1
-    path: Assets/Scenes/Book1.unity
+    path: "Assets/CodeJam_MeleeseK\xE6rhavn/Split up book 1 into 2 seperate books/BookBeginning.unity"
+    guid: 228ee792676c827419fe16e276d1a607
+  - enabled: 1
+    path: "Assets/CodeJam_MeleeseK\xE6rhavn/New minigame_ Climb/KlatreOp.unity"
+    guid: 913bdfa472afde34ca404423916d7541
+  - enabled: 1
+    path: "Assets/CodeJam_MeleeseK\xE6rhavn/Split up book 1 into 2 seperate books/Book1.unity"
     guid: d37ffdaeb264136488ff7fbb4bd57767
   - enabled: 1
     path: Assets/Scenes/ScanningLeg.unity
