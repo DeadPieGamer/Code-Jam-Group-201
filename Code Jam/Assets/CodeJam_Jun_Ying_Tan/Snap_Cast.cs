@@ -16,6 +16,11 @@ public class Snap_Cast : MonoBehaviour
 
     public string Filename;
 
+    public void Awake()
+    {
+        _myDisplay = GameObject.FindGameObjectWithTag("Writeable");
+    }
+
     public static void TakeSnap_Static(int width, int height)
     {
         _instance.takeSnap(width, height); 

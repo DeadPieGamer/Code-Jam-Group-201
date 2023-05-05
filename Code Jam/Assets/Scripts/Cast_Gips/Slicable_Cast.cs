@@ -56,5 +56,6 @@ public class Slicable_Cast : MonoBehaviour
         yield return new WaitForSeconds(wait);
         sceneManager.LoadNextScene();
     }
+    
 }
 //Inspo from 1 Minute Unity youtube.com/watch?v=muPZvw7CU-0&t=509s
