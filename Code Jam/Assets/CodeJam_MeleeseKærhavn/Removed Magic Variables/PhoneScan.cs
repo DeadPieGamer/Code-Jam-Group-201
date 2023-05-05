@@ -12,14 +12,14 @@ public class PhoneScan : MonoBehaviour
     private int maxShakes = 3;
 
     private float gravity = 0.98f;
-
+private string scanLineAnimation = "Scanning";
     private float shortwait = 1f;
     private float longwait = 5f;
 
     public void CheckAccelerometer(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         float acceleration = context.ReadValue<Vector3>().magnitude;
-        private string scanLineAnimation = "Scanning";
+        
     
 
         acceleration -= gravity;
