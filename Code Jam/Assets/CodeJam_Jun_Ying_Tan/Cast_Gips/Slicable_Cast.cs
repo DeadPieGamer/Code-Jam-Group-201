@@ -54,7 +54,7 @@ public class Slicable_Cast : MonoBehaviour
             m_rigibody.bodyType = RigidbodyType2D.Static;
         }
         
-        //StartCoroutine(loadnext());
+        StartCoroutine(loadnext());
     }
 
     private IEnumerator loadnext()
