@@ -55,6 +55,7 @@ public class Slicable_Cast : MonoBehaviour
         }
         
         StartCoroutine(loadnext());
+        Destroy(snap);
     }
 
     private IEnumerator loadnext()
