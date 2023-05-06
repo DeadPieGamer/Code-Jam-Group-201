@@ -7,6 +7,7 @@ TagManager:
   - Writable
   - Writeable
   - Storyinator
+  - Obstacle
   layers:
   - Default
   - TransparentFX
