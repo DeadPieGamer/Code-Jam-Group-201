@@ -18,7 +18,7 @@ public class BGscroll : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() //it happens again and again 
     {
         transform.Translate(Vector3.down * speed * Time.deltaTime); //This will move the background downwards
         if(transform.position.y < -14.80f) //the moment the original BG image goes any value below -14.80 the position of it is reset to the same place that it was at the start of the game
