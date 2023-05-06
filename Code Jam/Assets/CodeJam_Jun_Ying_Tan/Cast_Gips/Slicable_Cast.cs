@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEditor.FilePathAttribute;
+using static UnityEngine.UI.Image;
+using UnityEngine.UIElements;
 
 public class Slicable_Cast : MonoBehaviour
 {
@@ -13,11 +16,14 @@ public class Slicable_Cast : MonoBehaviour
 
     [SerializeField] private LoadScene sceneManager;
     private float wait = 1.5f;
+    public GameObject snap;
 
     private void Awake()
     {
         m_rigibody = GetComponent<Rigidbody2D>();
         m_collider = GetComponent<Collider2D>();
+        snap = GameObject.FindGameObjectWithTag("Writeable");
+        Instantiate(snap, transform.position, Quaternion.Euler(90, 180, 0));
     }
 
     public void setSlicedObject(GameObject slicedObject)
@@ -48,7 +54,7 @@ public class Slicable_Cast : MonoBehaviour
             m_rigibody.bodyType = RigidbodyType2D.Static;
         }
         
-        StartCoroutine(loadnext());
+        //StartCoroutine(loadnext());
     }
 
     private IEnumerator loadnext()

@@ -34,10 +34,10 @@ public class Snap_Cast : MonoBehaviour
     private void takeSnap(int width, int height)
     {
         _cam.targetTexture =
-            RenderTexture.GetTemporary(width, height, 16);//16 WHY????
+        RenderTexture.GetTemporary(width, height, 16);//16 WHY????
         _takeScreenSnap = true;
     }
-    private void OnPostRender()
+    public void OnPostRender()
     {
         if (_takeScreenSnap == true)
         {
@@ -46,7 +46,7 @@ public class Snap_Cast : MonoBehaviour
 
             //retrive temporary render as texture
             Texture2D renderResult = new Texture2D(rendTex.width, rendTex.height, TextureFormat.ARGB32, false);
-
+         
             //gather pixels from texture
             Rect rect = new Rect(0, 0, rendTex.width, rendTex.width);
             renderResult.ReadPixels(rect, 0, 0);
@@ -56,10 +56,11 @@ public class Snap_Cast : MonoBehaviour
 
             //apply texture
             _myDisplay.GetComponent<Renderer>().material.mainTexture = renderResult;
+            _myDisplay.GetComponent<Renderer>().material.shader = Shader.Find("UI/Default");
             DontDestroyOnLoad(this._myDisplay);
 
-            //save to file
-            if (_saveFile==true)
+        //save to file
+        if (_saveFile==true)
             {
                 byte[] bytes = renderResult.EncodeToPNG();
                 string Path = Application.persistentDataPath + "/" + Filename + ".png";
