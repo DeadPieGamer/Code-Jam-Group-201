@@ -8,7 +8,6 @@ public class Hitbox_CastGame : MonoBehaviour
     [SerializeField] private Slicable_Cast slicable;
 
     //gameobject
-
     [SerializeField] private GameObject sliced;
 
     public void OnMouseExit() {

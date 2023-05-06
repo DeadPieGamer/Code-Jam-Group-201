@@ -16,11 +16,6 @@ public class Snap_Cast : MonoBehaviour
 
     public string Filename;
 
-    public void Awake()
-    {
-        _myDisplay = GameObject.FindGameObjectWithTag("Writeable");
-    }
-
     public static void TakeSnap_Static(int width, int height)
     {
         _instance.takeSnap(width, height); 
@@ -56,6 +51,7 @@ public class Snap_Cast : MonoBehaviour
 
             //apply texture
             _myDisplay.GetComponent<Renderer>().material.mainTexture = renderResult;
+            // (Makes so the image has the correct shade)
             _myDisplay.GetComponent<Renderer>().material.shader = Shader.Find("UI/Default");
             DontDestroyOnLoad(this._myDisplay);
 
@@ -73,3 +69,4 @@ public class Snap_Cast : MonoBehaviour
         }
     }
 }
+//Inspo from Red Hen dev https://www.youtube.com/watch?v=Rx-fpP5IXho
