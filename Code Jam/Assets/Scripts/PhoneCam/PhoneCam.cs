@@ -10,7 +10,7 @@ public class PhoneCam : MonoBehaviour
 {
 
     private bool camAvailable;
-    private WebCamTexture backcam;
+    public WebCamTexture backcam;
 
     public RawImage background;
     public AspectRatioFitter fit;

@@ -8,12 +8,13 @@ public class PhoneScan : MonoBehaviour
     [SerializeField] private Animator scannerAnimator;
     [SerializeField] private LoadScene sceneMang;
     [SerializeField] private float maxAcceleration = 0.3f;//Max/Min range that the acceleration can be in
+    [SerializeField] private LoadScreenShot loadScreenShot;
     private int currentShakeCount = 0;
     private int maxShakes = 3;
 
     private float gravity = 0.98f; //earth garvity is around 9.82m/s^2 hench the 0.98f
 
-    private float shortwait = 1f; 
+    private float shortwait = 2f; 
     private float longwait = 5f;
 
     private string conditionName = "Scanning";
@@ -63,8 +64,9 @@ public class PhoneScan : MonoBehaviour
     private IEnumerator StartScan()
     {
         scannerAnimator.SetBool(conditionName, true);
-        yield return new WaitForSeconds(shortwait);
         yield return new WaitForSeconds(longwait);
+        loadScreenShot.Rerender("LegImage");
+        yield return new WaitForSeconds(shortwait);
         sceneMang.LoadNextScene();
     }
 }

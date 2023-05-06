@@ -546,6 +546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 583598883}
   - component: {fileID: 583598882}
+  - component: {fileID: 583598884}
   m_Layer: 0
   m_Name: ScreenCapturer
   m_TagString: Untagged
@@ -580,6 +581,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &583598884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583598881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b050b0891e2d86949ac1b975a49f0de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bg: {fileID: 1538347501}
+  Image: {fileID: 0}
+  input: 
 --- !u!1 &1037727126
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +706,18 @@ MonoBehaviour:
           m_StringArgument: LegImage
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 583598884}
+        m_TargetAssemblyTypeName: LoadScreenShot, Assembly-CSharp
+        m_MethodName: Rerender
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LegImage
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1037727129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,6 +771,7 @@ MonoBehaviour:
   scannerAnimator: {fileID: 497202088}
   sceneMang: {fileID: 2128869806}
   maxAcceleration: 0.3
+  loadScreenShot: {fileID: 583598884}
 --- !u!114 &1037727132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,6 +1110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85bdde94833d78429113db26e0b9e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backcam: {fileID: 0}
   background: {fileID: 1538347503}
   fit: {fileID: 1538347506}
 --- !u!114 &1538347506
