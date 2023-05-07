@@ -12,7 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Book1.unity
     guid: d37ffdaeb264136488ff7fbb4bd57767
   - enabled: 1
-    path: Assets/CodeJam_CarolineBruntseChristensen/Scenes/WheelBarrowGame 1.unity
+    path: Assets/CodeJam_CarolineBruntseChristensen/NewMinigame/Scenes/WheelBarrowGame
+      1.unity
     guid: 5d439dba9d1bd794f9949fe0c3804a22
   - enabled: 1
     path: Assets/Scenes/Book1.5.unity
