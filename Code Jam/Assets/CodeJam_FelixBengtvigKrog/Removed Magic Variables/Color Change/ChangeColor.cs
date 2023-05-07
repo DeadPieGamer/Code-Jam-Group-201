@@ -8,7 +8,6 @@ public class ChangeColor : MonoBehaviour
     // Code inspired by "GameAssetWorld", YT link: https://www.youtube.com/watch?v=EzZGPRBchJo
 
     public Image image;
-    public Sprite sprite;
     public Sprite[] sprites;
 
     public Animator okAnimator;
@@ -20,8 +19,8 @@ public class ChangeColor : MonoBehaviour
 
     public void colorChange(int button)
     {
-        sprite = sprites[button];
-        image.sprite = sprite;
+        // Removed an unnecessary variable
+        image.sprite = sprites[button];
         // Replaced the hardcoded PlayerPref name with a variable
         PlayerPrefs.SetInt(colorPlayerPref, button);
         okAnimator.SetBool("Moving", true);

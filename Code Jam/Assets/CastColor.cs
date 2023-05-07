@@ -8,19 +8,19 @@ public class CastColor : MonoBehaviour
   
     // Code inspired by "GameAssetWorld", YT link: https://www.youtube.com/watch?v=EzZGPRBchJo
 
-    public Sprite sprite;
     public Sprite[] sprites;
     public SpriteRenderer castRender;
    
 
     public void colorChange(int button)
     {
-        sprite = sprites[button];
-        castRender.sprite = sprite;
+        // Removed an unnecessary variable
+        castRender.sprite = sprites[button];
     }
     private void Start()
     {
-        colorChange(PlayerPrefs.GetInt("Picked Color"));
+        // Using the static variable to get the playerpref and added a default value
+        colorChange(PlayerPrefs.GetInt(ChangeColor.colorPlayerPref, 0));
     }
 }
 
