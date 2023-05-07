@@ -7,7 +7,9 @@ public class Follow_Mouse : MonoBehaviour
 {
     public void Update()
     {
+        //container for the the cursor's position 
         Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //setting the objcet position to the cursor's position 
         transform.position = new Vector2(cursorPos.x, cursorPos.y);
     }
     

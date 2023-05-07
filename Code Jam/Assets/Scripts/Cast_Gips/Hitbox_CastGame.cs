@@ -7,12 +7,17 @@ public class Hitbox_CastGame : MonoBehaviour
     //reference of our Slicable_Cast script 
     [SerializeField] private Slicable_Cast slicable;
 
-    //gameobject
+    //gameobject that contains the gameobject with the sliced cast image
     [SerializeField] private GameObject sliced;
 
-    public void OnMouseExit() {
-        if(slicable.getSlicedObject() == null){
+
+    public void OnMouseExit()
+    {
+        // if object has not been sliced then...
+        if(slicable.getSlicedObject() == null)
+        {
             slicable.setSlicedObject(sliced);
+            //calling the function from our other script
             slicable.Slice();
             //Debug.Log("came from" + transform.name);
         }

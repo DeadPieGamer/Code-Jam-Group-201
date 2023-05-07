@@ -7,15 +7,20 @@ using System.IO;
 public class Snap_Cast : MonoBehaviour
     
 {
+    // refrence to our script 
     private static Snap_Cast _instance;
 
+    // refrence to the camera 
     private Camera _cam;
     private bool _takeScreenSnap = false;
     public bool _saveFile = false;
-    public GameObject _myDisplay;
+
+    [SerializeField]
+    private GameObject _myDisplay;
 
     public string Filename;
 
+    
     public static void TakeSnap_Static(int width, int height)
     {
         _instance.takeSnap(width, height); 
@@ -24,26 +29,30 @@ public class Snap_Cast : MonoBehaviour
     private void Start()
     {
         _instance = this;
+        //getting the camera in unity, where the script is attached to the gameobject   
         _cam = this.gameObject.GetComponent<Camera>();
     }
     private void takeSnap(int width, int height)
     {
         _cam.targetTexture =
-        RenderTexture.GetTemporary(width, height, 16);//16 WHY????
+        RenderTexture.GetTemporary(width, height, 16);//Width and hight and deptbuffer
+        // switch on screengrab taking 
         _takeScreenSnap = true;
     }
     public void OnPostRender()
     {
         if (_takeScreenSnap == true)
         {
+            // switching off screengrab taking 
             _takeScreenSnap = false;
+            //rendertexture from the camera 
             RenderTexture rendTex = _cam.targetTexture;
 
             //retrive temporary render as texture
             Texture2D renderResult = new Texture2D(rendTex.width, rendTex.height, TextureFormat.ARGB32, false);
          
             //gather pixels from texture
-            Rect rect = new Rect(0, 0, rendTex.width, rendTex.width);
+            Rect rect = new Rect(0, 0, rendTex.width, rendTex.height);
             renderResult.ReadPixels(rect, 0, 0);
 
             //apply pixels
