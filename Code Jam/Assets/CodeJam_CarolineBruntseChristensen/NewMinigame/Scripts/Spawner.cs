@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private float xBounds, yBounds;
 
-    [SerializeField] private int secToSpawn = 3;
+    [SerializeField] private int secToSpawn = 1;
 
     [SerializeField] private float spawnChance = .9f;
 
